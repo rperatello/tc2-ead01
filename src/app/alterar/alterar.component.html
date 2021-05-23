@@ -1,1 +1,17 @@
-<p>alterar works!</p>
+<div *ngIf="produtoAlterar">
+  <h2>Alterar Produto</h2>
+  <label for="">Nome:
+      <input type="text" [(ngModel)]="produtoAlterar.title">
+  </label>
+  <br/>
+  <label for="">Preço:
+      <input type="number" [(ngModel)]="produtoAlterar.price">
+  </label>
+  <br/>
+  <label>Descrição<br/>
+      <textarea [(ngModel)]="produtoAlterar.description"></textarea>
+  </label>
+  <br/>
+  <button (click) = "recarregar()">Cancelar</button>
+  <button (click) = "alterar()">Alterar</button>
+</div>

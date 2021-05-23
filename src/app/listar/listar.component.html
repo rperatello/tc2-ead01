@@ -1,1 +1,28 @@
-<p>listar works!</p>
+<div>
+  <div>
+      <h1>Lista de Produtos</h1>
+      <table class="tableProducts">
+        <thead>
+            <tr>
+                <td>Preço</td>
+                <td>Descrição</td>
+                <td>Título</td>
+                <td colspan="2">Ação</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listaProdutos">
+                <td>{{p.price | currency}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.title}}</td>
+                <td><button (click)="selecionaAlteraProduto(p)">Alterar</button></td>
+                <td><button (click)="selecionaProduto(p)">Deletar</button></td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+
+  <app-alterar [produtoAlterar] = "produtoAlterar" *ngIf="produtoAlterar.title  != ''"></app-alterar>
+  <app-deletar [produtoSelecionado] = "produtoDeletar" *ngIf="produtoDeletar.title  != ''"></app-deletar>
+
+</div>

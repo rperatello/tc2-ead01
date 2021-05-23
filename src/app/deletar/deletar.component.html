@@ -1,1 +1,20 @@
-<p>deletar works!</p>
+<div *ngIf="produtoSelecionado">
+  <h2>Confirmar de exclusão</h2>
+  <label for="">Nome:
+      <input type="text" [(ngModel)]="produtoSelecionado.title" disabled>
+  </label>
+  <br/>
+  <br/>
+  <label for="">Preço:
+      <input type="number" [(ngModel)]="produtoSelecionado.price" disabled>
+  </label>
+  <br/>
+  <br/>
+  <label>Descrição:<br/>
+      <textarea [(ngModel)]="produtoSelecionado.description" disabled></textarea>
+  </label>
+  <br/>
+  <br/>
+  <button (click) = "recarregar()">Cancelar</button>
+  <button (click) = "excluir()">Excluir</button>
+</div>
